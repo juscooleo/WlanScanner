@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WlanScanner</string>
+    <string name="dummy_button">Start Scan !</string>
+    <string name="dummy_content">Juscooleo@SZU\n\nPress\nButton\nBelow\n</string>
+
+</resources>
+
