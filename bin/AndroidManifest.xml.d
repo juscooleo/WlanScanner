@@ -1,2 +1,2 @@
-C:\Users\¼Ñ»¶\Documents\NetBeansProjects\WlanScanner\bin\AndroidManifest.xml : \
-C:\Users\¼Ñ»¶\Documents\NetBeansProjects\WlanScanner\AndroidManifest.xml \
+E:\WlanScanner\bin\AndroidManifest.xml : \
+E:\WlanScanner\AndroidManifest.xml \

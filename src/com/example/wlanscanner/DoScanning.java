@@ -67,17 +67,22 @@ public class DoScanning {
     }
     
     protected void ResultProcess(List<ScanResult> list) {
+        double b = 5.23639651834339; double k = 0.0636838734948869;
         try {
-            debugger.setText("Found Following APs: \n\n");
+            debugger.setText("Found APs Near you: \n\n");
             debugger.setTypeface(Typeface.DEFAULT);
             debugger.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
             debugger.setGravity(Gravity.CENTER_VERTICAL);
-            debugger.setText("          BSSID               (SSID)             Level\n");
+            debugger.setText("          BSSID             (SSID)         Distance\n");
         } catch(Throwable e) {}
         
         for (ScanResult AP : list) {
             try {
-                debugger.append( AP.BSSID+'('+AP.SSID+"): "+AP.level+"dBm\n" );
+                double d = b*Math.expm1(-k*AP.level)+1;  d = Math.round(d) / 100.0;
+                String bssid = AP.BSSID.replaceAll(":", ""); bssid = bssid.toUpperCase();
+                String ssid = (AP.SSID.length()<=11) ? AP.SSID : AP.SSID.substring(0, 9)+"...";
+                //debugger.append( AP.BSSID+'('+AP.SSID+"): "+AP.level+"dBm\n" );
+                debugger.append( bssid+" ("+ssid+"):    "+d+"m\n" );
             } catch(Throwable e) {}
         }
         
